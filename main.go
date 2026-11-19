@@ -1,7 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/alexxxey-linuxoid/termfun/internal/menu"
+	"github.com/alexxxey-linuxoid/termfun/internal/modules/night_sky"
+)
 
 func main() {
-	fmt.Println("Welcome to TermFun!")
+	for {
+		selected, err := menu.Run()
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		switch selected {
+		case "Night Sky":
+			if err := night_sky.Run(); err != nil {
+				log.Fatal(err)
+			}
+
+		case "Exit", "":
+			return
+		}
+	}
 }
