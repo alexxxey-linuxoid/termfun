@@ -14,6 +14,7 @@ type model struct {
 
 var items = []string{
 	"Night Sky",
+	"Space Shooter",
 	"Matrix Rain",
 	"Fireplace",
 	"Snake",
